@@ -135,9 +135,9 @@ seattleCenter.render();
 
 
 var capitolHill = {
-  minCustomers: 11,
+  minCustomers: 20,
   maxCustomers: 38,
-  avgCookiesPerSale: 3.7,
+  avgCookiesPerSale: 2.3,
   hourlyCookies: [],
 
   customersPerHour: function(minCustomers, maxCustomers) {
@@ -178,9 +178,9 @@ capitolHill.cookiesPerHour();
 capitolHill.render();
 
 var alkiBeach = {
-  minCustomers: 11,
-  maxCustomers: 38,
-  avgCookiesPerSale: 3.7,
+  minCustomers: 2,
+  maxCustomers: 16,
+  avgCookiesPerSale: 4.6,
   hourlyCookies: [],
 
   customersPerHour: function(minCustomers, maxCustomers) {
