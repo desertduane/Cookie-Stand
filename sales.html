@@ -7,27 +7,32 @@
   </head>
   <body>
     <h1> Seattle Cookie Counts</h1>
+    <form id="store-form">
+      <fieldset>
+        <legend>Add New Locations</legend>
+
+        <label for="store">Store: </label>
+        <input type="text" name="store" />
+
+        <label for="minCustomers">Minimum Customers: </label>
+        <input type="text" name="minCustomers" />
+
+        <label for="maxCustomers">Maximum Customers: </label>
+        <input type="text" name="maxCustomers" />
+
+        <label for="avgCookiesPerSale">Average Cookies Per Sale: </label>
+        <input type="text" name="avgCookiesPerSale" />
+
+        <button type="submit">Add a New Location!</button>
+      </fieldset>
+    </form>
+
     <ol id='stores'></ol>
-
-    <!-- <h2>1st and Pike</h2>
-    <ul id="pike"></ul>
-
-    <h2>SeaTac Airport</h2>
-    <ul id="seatac"></ul>
-
-    <h2>Seattle Center</h2>
-    <ul id="sc"></ul>
-
-    <h2>Capitol Hill</h2>
-    <ul id="ch"></ul>
-
-    <h2>Alki Beach</h2>
-    <ul id="alki"></ul> -->
 
     <table id="cookieStores"></table>
 
+
+
     <script src="app.js"></script>
-
-
   </body>
 </html>
