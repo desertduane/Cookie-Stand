@@ -2,8 +2,9 @@
 
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
-
+var storeForm = document.getElementById('store-form');
 var salesTable = document.getElementById('cookieStores');
+var myStores = [];
 
 function StoreByLocation(location, minCustomers, maxCustomers, avgCookiesPerSale) {
   this.location = location;
@@ -51,13 +52,43 @@ this.render = function() {
 this.calcCookiesSoldEachHour();
 
 };
-var myStores = [];
+
 
 new StoreByLocation('1st and Pike', 23, 65, 6.3);
 new StoreByLocation('SeaTac Airport', 3, 24, 1.2);
 new StoreByLocation('Seattle Center', 11, 38, 3.7);
 new StoreByLocation('Capitol Hill', 20, 38, 2.3);
 new StoreByLocation('Alki', 2, 16, 4.6);
+
+function renderNewStore() {
+  stores.innerHTML = '';
+
+  for (var i = 0; i < myStores.length; i++) {
+    stores.appendChild(myStores[i].render());
+  }
+};
+function handleStoreSubmit(event) {
+  event.preventDefault();
+  var location = event.target.location.value;
+  var minCustomers = event.target.minCustomers.value;
+  var maxCustomers = event.target.maxCustomers.value;
+  var avgCookiesPerSale = event.target.avgCookiesPerSale.value;
+
+  // if (!event.target.location || !event.target.minCustomers || !event.target.maxCustomers || !event.target.avgCookiesPerSale) {
+  //   return alert('Fields cannot be empty!');
+  //
+  // }
+  var newStore = new StoreByLocation(location, minCustomers, maxCustomers, avgCookiesPerSale);
+
+  // event.target.location.value = null;
+  // event.target.minCustomers.value = null;
+  // event.target.maxCustomers.value = null;
+  // event.target.avgCookiesPerSale.value = null;
+
+
+  myStores.push(newStore);
+  newStore.render();
+};
 
 
 function makeHeaderRow() {
@@ -79,17 +110,17 @@ function makeHeaderRow() {
   salesTable.appendChild(trEl);
 }
 
-
-
 function allCookies() {
   for(var i = 0; i < myStores.length; i++) {
     myStores[i].render();
   }
+};
 
-}
+
 makeHeaderRow();
 allCookies();
 
+storeForm.addEventListener('submit', handleStoreSubmit);
 
 
 // function storesInTheDOM() {
