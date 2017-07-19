@@ -2,9 +2,11 @@
 
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
-var allStores = [];
+
+var salesTable = document.getElementById('cookieStores');
 
 function StoreByLocation(location, minCustomers, maxCustomers, avgCookiesPerSale) {
+  this.location = location;
   this.minCustomers = minCustomers;
   this.maxCustomers = maxCustomers;
   this.avgCookiesPerSale = avgCookiesPerSale;
@@ -17,39 +19,100 @@ function StoreByLocation(location, minCustomers, maxCustomers, avgCookiesPerSale
   };
   this.cookiesSoldEachHour = [];
   this.calcCookiesSoldEachHour = function(){
-    // I need to multiply each value in customersPerHour * avgCookiesPerSale to generate the number of cookiesSoldEachHour
-    this.calcCustomersPerHour();
+  this.calcCustomersPerHour();
     for(var i = 0; i < hours.length; i++){
+
       this.cookiesSoldEachHour.push(Math.ceil(this.customersPerHour[i] * this.avgCookiesPerSale));
       this.totalCookiesPerDay += this.cookiesSoldEachHour[i];
-
     }
-
-  };
-  this.totalCookiesPerDay = 0;
-  this.render = function(){
-    var pikeList = document.getElementById('pike');
-    this.calcCookiesSoldEachHour();
-
-    for(var i = 0; i < hours.length; i++){
-      var liEl = document.createElement('li');
-      liEl.textContent = hours[i] + ': ' + this.cookiesSoldEachHour[i] + ' cookies';
-      pikeList.appendChild(liEl);
-    }
-    liEl = document.createElement('li');
-    liEl.textContent = 'Total: ' + this.totalCookiesPerDay + ' cookies';
-    pikeList.appendChild(liEl);
-
-  }
-  allStores.push(this);
-  this.calcCookiesSoldEachHour();
-  this.render(allStores);
 };
+this.totalCookiesPerDay = 0;
+myStores.push(this);
+
+this.render = function() {
+  var trEl = document.createElement('tr');
+
+  var tdEl = document.createElement('td');
+  tdEl.textContent = this.location;
+  trEl.appendChild(tdEl);
+
+  for(var i = 0; i < hours.length; i++) {
+    var tdEl = document.createElement('td');
+    tdEl.textContent = this.cookiesSoldEachHour[i];
+    trEl.appendChild(tdEl);
+  }
+
+  var tdEl = document.createElement('td');
+  tdEl.textContent = this.totalCookiesPerDay;
+  trEl.appendChild(tdEl);
+
+  salesTable.appendChild(trEl);
+  }
+this.calcCookiesSoldEachHour();
+
+};
+var myStores = [];
+
 new StoreByLocation('1st and Pike', 23, 65, 6.3);
 new StoreByLocation('SeaTac Airport', 3, 24, 1.2);
 new StoreByLocation('Seattle Center', 11, 38, 3.7);
 new StoreByLocation('Capitol Hill', 20, 38, 2.3);
 new StoreByLocation('Alki', 2, 16, 4.6);
+
+function storesInTheDOM() {
+  var storeList = document.getElementById('stores');
+  for(var i = 0; i < myStores.length; i++){
+    var liEl = document.createElement('li');
+    liEl.textContent = myStores[i].location;
+    storeList.appendChild(liEl);
+  }
+}
+
+function makeHeaderRow() {
+  var trEl = document.createElement('tr');
+
+  var thEl = document.createElement('th');
+  thEl.textContent = 'location';
+  trEl.appendChild(thEl);
+
+  for(var i = 0; i < hours.length; i++) {
+    var thEl = document.createElement('th');
+    thEl.textContent = hours[i];
+    trEl.appendChild(thEl);
+  };
+  var thEl = document.createElement('th');
+  thEl.textContent = 'Daily totals';
+  trEl.appendChild(thEl);
+
+  salesTable.appendChild(trEl);
+}
+
+
+
+function allCookies() {
+  for(var i = 0; i < myStores.length; i++) {
+    myStores[i].render();
+  }
+
+}
+makeHeaderRow();
+allCookies();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // 1st and Pike	23	65	6.3
@@ -58,6 +121,19 @@ new StoreByLocation('Alki', 2, 16, 4.6);
 // Capitol Hill	20	38	2.3
 // Alki	2	16	4.6
 
+// this.totalCookiesPerDay = 0;
+// this.render = function(){
+//   var pikeList = document.getElementById('pike');
+//   this.calcCookiesSoldEachHour();
+//
+//   for(var i = 0; i < hours.length; i++){
+//     var liEl = document.createElement('li');
+//     liEl.textContent = hours[i] + ': ' + this.cookiesSoldEachHour[i] + ' cookies';
+//     pikeList.appendChild(liEl);
+//   }
+//   liEl = document.createElement('li');
+//   liEl.textContent = 'Total: ' + this.totalCookiesPerDay + ' cookies';
+//   pikeList.appendChild(liEl);
 
 // function makeHeaderRow(){
 //   var trEl = document.createElement('tr');
