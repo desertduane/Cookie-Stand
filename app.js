@@ -70,9 +70,9 @@ function renderNewStore() {
 function handleStoreSubmit(event) {
   event.preventDefault();
   var location = event.target.location.value;
-  var minCustomers = event.target.minCustomers.value;
-  var maxCustomers = event.target.maxCustomers.value;
-  var avgCookiesPerSale = event.target.avgCookiesPerSale.value;
+  var minCustomers = parseInt(event.target.minCustomers.value);
+  var maxCustomers = parseInt(event.target.maxCustomers.value);
+  var avgCookiesPerSale = parseInt(event.target.avgCookiesPerSale.value);
 
   if (!event.target.location || !event.target.minCustomers || !event.target.maxCustomers || !event.target.avgCookiesPerSale) {
     return alert('Fields cannot be empty!');
