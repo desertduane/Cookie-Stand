@@ -1,14 +1,86 @@
-/** {
-  font-family: 'Baloo', cursive;*/
+* {
+	/*border-style: solid;*/
+	background-color: #072660;
+	color: #9da3ad;
 }
+
+h1 {
+	border-style: solid;
+	border-radius: 50px;
+	text-align: center;
+}
+h2 {
+	margin-left: 50px;
+	width: 650px;
+}
+
+
+#salmon {
+	position: relative;
+	left: 250px;
+}
+
+#aboutUs{
+	padding: 5px;
+	font-size: 20px;
+	margin-left: 20px;
+	width: 300px;
+	background-color: black;
+}
+
+#family {
+	margin-left: 20px;
+	width: 300px;
+	height: 200px;
+
+}
+#products {
+	float: right;
+	position: relative;
+	bottom: 315px;
+	right: 115px;
+	width: 400px;
+}
+#productP{
+	padding: 5px;
+	position: relative;
+	bottom: 250px;
+	left: 235px;
+	width: 400px;
+	background-color: black;
+	float: right;
+	font-size: 20px;
+}
+#images {
+	position: relative;
+	bottom: 335px;
+	float: right;
+}
+#storeHours {
+	position: relative;
+	left: 250px;
+	bottom: 50px;
+
+}
+#footer{
+	padding-left: 10px;
+	padding-bottom: 10px;
+	border-style: solid;
+	height:50px
+
+}
+
+
 table {
 	border: 10px solid black;
 }
+
 td {
 	padding: 10px;
 	border-radius: 15px;
   border: 1px solid black;
 }
+
 th {
 	background-color: navy;
 	color: white;
