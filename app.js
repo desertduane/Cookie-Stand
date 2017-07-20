@@ -74,16 +74,16 @@ function handleStoreSubmit(event) {
   var maxCustomers = event.target.maxCustomers.value;
   var avgCookiesPerSale = event.target.avgCookiesPerSale.value;
 
-  // if (!event.target.location || !event.target.minCustomers || !event.target.maxCustomers || !event.target.avgCookiesPerSale) {
-  //   return alert('Fields cannot be empty!');
-  //
-  // }
+  if (!event.target.location || !event.target.minCustomers || !event.target.maxCustomers || !event.target.avgCookiesPerSale) {
+    return alert('Fields cannot be empty!');
+
+  }
   var newStore = new StoreByLocation(location, minCustomers, maxCustomers, avgCookiesPerSale);
 
-  // event.target.location.value = null;
-  // event.target.minCustomers.value = null;
-  // event.target.maxCustomers.value = null;
-  // event.target.avgCookiesPerSale.value = null;
+  event.target.location.value = null;
+  event.target.minCustomers.value = null;
+  event.target.maxCustomers.value = null;
+  event.target.avgCookiesPerSale.value = null;
 
 
   myStores.push(newStore);
