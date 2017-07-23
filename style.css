@@ -1,17 +1,29 @@
 * {
-	/*border-style: solid;*/
 	background-color: #072660;
 	color: #9da3ad;
 }
 
 h1 {
+	font-family: 'Lemonada', cursive;
 	border-style: solid;
 	border-radius: 50px;
 	text-align: center;
 }
 h2 {
+	font-family: 'Lemonada', cursive;
 	margin-left: 50px;
 	width: 650px;
+}
+.home{
+	position: relative;
+	top: 5px;
+}
+button{
+	background-color: grey;
+	color: white;
+}
+label{
+	color: white;
 }
 
 
@@ -26,6 +38,7 @@ h2 {
 	margin-left: 20px;
 	width: 300px;
 	background-color: black;
+	font-family: Georgia;
 }
 
 #family {
@@ -50,6 +63,7 @@ h2 {
 	background-color: black;
 	float: right;
 	font-size: 20px;
+	font-family: Georgia;
 }
 #images {
 	position: relative;
@@ -69,19 +83,27 @@ h2 {
 	height:50px
 
 }
+a{
+	position: relative;
+	left: 700px;
+	bottom: 85px;
+}
 
 
 table {
 	border: 10px solid black;
+	border-radius: 10px;
 }
 
 td {
 	padding: 10px;
-	border-radius: 15px;
-  border: 1px solid black;
+	border-radius: 20px;
+	border: 1px solid black;
+	color: white;
+	font-family: Arial;
 }
 
 th {
-	background-color: navy;
+	background-color: grey;
 	color: white;
 }
