@@ -1,109 +1,114 @@
 * {
-	background-color: #072660;
-	color: #9da3ad;
+  background-color: #072660;
+  color: #9da3ad;
 }
 
 h1 {
-	font-family: 'Lemonada', cursive;
-	border-style: solid;
-	border-radius: 50px;
-	text-align: center;
-}
-h2 {
-	font-family: 'Lemonada', cursive;
-	margin-left: 50px;
-	width: 650px;
-}
-.home{
-	position: relative;
-	top: 5px;
-}
-button{
-	background-color: grey;
-	color: white;
-}
-label{
-	color: white;
+  font-family: 'Lemonada', cursive;
+  border-style: solid;
+  border-radius: 50px;
+  text-align: center;
 }
 
+h2 {
+  font-family: 'Lemonada', cursive;
+  margin-left: 50px;
+  width: 650px;
+}
+
+.home {
+  position: relative;
+  top: 5px;
+}
+
+button {
+  background-color: grey;
+  color: white;
+}
+
+label {
+  color: white;
+}
 
 #salmon {
-	position: relative;
-	left: 250px;
+  position: relative;
+  left: 250px;
 }
 
-#aboutUs{
-	padding: 5px;
-	font-size: 20px;
-	margin-left: 20px;
-	width: 300px;
-	background-color: black;
-	font-family: Georgia;
+#aboutUs {
+  padding: 5px;
+  font-size: 20px;
+  margin-left: 20px;
+  width: 300px;
+  background-color: black;
+  font-family: Georgia;
 }
 
 #family {
-	margin-left: 20px;
-	width: 300px;
-	height: 200px;
-
+  margin-left: 20px;
+  width: 300px;
+  height: 200px;
 }
+
 #products {
-	float: right;
-	position: relative;
-	bottom: 315px;
-	right: 115px;
-	width: 400px;
+  float: right;
+  position: relative;
+  bottom: 315px;
+  right: 115px;
+  width: 400px;
 }
-#productP{
-	padding: 5px;
-	position: relative;
-	bottom: 250px;
-	left: 235px;
-	width: 400px;
-	background-color: black;
-	float: right;
-	font-size: 20px;
-	font-family: Georgia;
+
+#productP {
+  padding: 5px;
+  position: relative;
+  bottom: 250px;
+  left: 235px;
+  width: 400px;
+  background-color: black;
+  float: right;
+  font-size: 20px;
+  font-family: Georgia;
 }
+
 #images {
-	position: relative;
-	bottom: 335px;
-	float: right;
+  position: relative;
+  bottom: 335px;
+  float: right;
 }
+
 #storeHours {
-	position: relative;
-	left: 250px;
-	bottom: 50px;
-
-}
-#footer{
-	padding-left: 10px;
-	padding-bottom: 10px;
-	border-style: solid;
-	height:50px
-
-}
-a{
-	position: relative;
-	left: 700px;
-	bottom: 85px;
+  position: relative;
+  left: 250px;
+  bottom: 50px;
 }
 
+#footer {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border-style: solid;
+  height: 50px
+}
+
+a {
+  position: relative;
+  left: 700px;
+  bottom: 85px;
+}
 
 table {
-	border: 10px solid black;
-	border-radius: 10px;
+  border: 10px solid black;
+  border-radius: 10px;
 }
 
 td {
-	padding: 10px;
-	border-radius: 20px;
-	border: 1px solid black;
-	color: white;
-	font-family: Arial;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid black;
+  color: white;
+  font-family: Arial;
 }
 
 th {
-	background-color: grey;
-	color: white;
+  background-color: grey;
+  color: white;
 }
